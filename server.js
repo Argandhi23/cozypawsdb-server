@@ -7,6 +7,8 @@ import dotenv from "dotenv";
 import adminRoutes from "./routes/adminRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import serviceRoutes from "./routes/serviceRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js"; // <-- PASTIKAN INI ADA
 
 dotenv.config(); // Load variabel dari .env
 
@@ -44,6 +46,8 @@ mongoose
 app.use("/api/admins", adminRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/services", serviceRoutes);
+app.use("/api/orders", orderRoutes); // <-- PASTIKAN INI BENAR ("/api/orders")
 
 // =======================
 // 🔹 Endpoint Tes
